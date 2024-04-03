@@ -1,0 +1,107 @@
+html,body {
+    height:100%;
+    width:100%;
+    margin:0;
+    background: #000;
+    vertical-align: middle;
+    font-size: calc(100% + 0.5vw);
+}
+
+.title {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+label {
+    color: white;
+    font-family: 'Marck Script', static;
+    font-weight: 200;
+}
+
+input {
+    width: auto;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    font-size: calc(70% + 0.5vw);
+}
+
+#login-form {
+    text-align: center;
+}
+
+#question-form {
+    text-align: center;
+}
+
+
+
+.button-color {
+    display: none;
+    font-size: calc(50% + 0.5vw);
+    font-family: 'MedievalSharp', cursive;
+    letter-spacing: 1px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.button-color:before {
+    content: '';
+    background: linear-gradient(45deg, #7a00ff, #ff7300, #002bff, #7a00ff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button-color:active {
+    color: #000
+}
+
+.button-color:active:after {
+    background: transparent;
+}
+
+.button-color:hover:before {
+    opacity: 1;
+}
+
+.button-color:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
